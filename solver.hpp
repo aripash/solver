@@ -38,6 +38,11 @@ namespace solver{
 		_number-=a;
 		return *this;}
 
+		void minus(){
+			_coe*=-1;
+			_number*=-1;
+			_PIC*=-1;
+		}
 		RealVariable& operator+(  RealVariable& rv){
 			if(_isLinear&&rv._isLinear){
 				_coe+=rv._coe;
@@ -56,11 +61,7 @@ namespace solver{
 		RealVariable& operator==(  RealVariable& rv){
 			return (*this-rv);}
 
-		void minus(){
-			_coe*=-1;
-			_number*=-1;
-			_PIC*=-1;
-		}
+		
 
 	};
 	class ComplexVariable{
@@ -101,6 +102,13 @@ namespace solver{
 		_number-=a;
 		return *this;}
 
+		void minus(){
+			_coe*=-1;
+			_number*=-1;
+			_PIC*=-1;
+			_complex*=-1;
+		}
+
 		ComplexVariable& operator+(  ComplexVariable& cv){
 			if(_isLinear&&cv._isLinear){
 				_coe+=cv._coe;
@@ -120,12 +128,7 @@ namespace solver{
 		ComplexVariable& operator==(  ComplexVariable& cv){
 			return (*this-cv);}
 
-		void minus(){
-			_coe*=-1;
-			_number*=-1;
-			_PIC*=-1;
-			_complex*=-1;
-		}
+		
 	};
 
 	inline  double solve(RealVariable& rv){
